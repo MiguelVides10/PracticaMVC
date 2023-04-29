@@ -2,59 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 @{
-    IEnumerable<string> strLista = new List<string>
-    {
-        "Laptop",
-        "Impresora",
-        "Accesorios",
-        "Proyectores",
-        "Tintas"
-    };
+    <h1 class="text-center">Welcome</h1>
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <h2 >Mantenimiento de Equipos</h2>
-</div>
-
-<div class="row">
-    <div class="form-group">
-        @Html.Label("lblNombreEquipo","Nombre Equipo")
-        @Html.TextBox("txtNombre","",new {@class="form-control"})
-    </div>
-    <div class="form-group">
-        @Html.Label("lblDescripcion", "Descripción")
-        @Html.TextArea("txaDescripcion","Asignar valor",new{@class="form-control"})
-    </div>
-    <div class="form-group">
-        @Html.Label("lblModelo","Modelo")
-        @Html.TextBox("txtModelo","",new {@class="form-control"})
-    </div>
-    <div class="form-group">
-        @Html.Label("lblAnioCompra","Año de compra")
-        @Html.ListBox("Lista",new List<SelectListItem>{
-            new SelectListItem{Text="2005", Value="2005"},
-            new SelectListItem{Text="2006",Value="2006"},
-            new SelectListItem{Text="2007",Value="2007"}
-        })
-    </div>
-    <div class="form-group">
-        @Html.Label("lblcosto","Costo")
-        @Html.TextBox("txtCosto","Costo",new {@class="form-control"})
-    </div>
-    <div class="form-group">
-        @Html.Label("lblVidaUtil","Vida Util")
-        @Html.TextBox("txtVIdaUtil","Vida Util",new {@class="form-control"})
-    </div>
-    <div class="form-group">
-        @Html.Label("lblTipoEquipo", "Tipo Equipo")
-        @Html.DropDownList("ddlTipoEquipo",new SelectList(strLista),"Seleccione una opción")
-    </div>
-    <div class="form-group">
-        @Html.CheckBox("estado") Inactivo
-    </div>
-    <div class="form-group">   
-        <input type="submit", value="Guardar" class="btn btn-primary" />
-        @Html.ActionLink("Guardar","Guardar", "Home")
-    </div>
-</div>
